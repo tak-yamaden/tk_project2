@@ -79,8 +79,11 @@ WSGI_APPLICATION = 'draft_control.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tk_projectdb',
+        'USER': 'postgres',
+        'PASSWORD': '22aj63bg?',
+        'HOST': 'localhost',
     }
 }
 
@@ -124,3 +127,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
