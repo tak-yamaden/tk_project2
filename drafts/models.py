@@ -43,7 +43,7 @@ class Draft(models.Model):
     status = models.CharField('状況', max_length=1, choices=Status.STATUS)
     created_at = models.DateTimeField('日付', default=timezone.now)
     category = models.ForeignKey(Category, verbose_name='カテゴリー', on_delete=models.CASCADE, blank=True, default='')
-    cover = models.ImageField(upload_to='covers/', blank=True)
+    cover = models.ImageField('図面', upload_to='covers/', blank=True)
     is_active = models.BooleanField(default=False)
 
     def __str__(self):

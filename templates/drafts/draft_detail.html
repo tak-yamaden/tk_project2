@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title %}{{ object.product_name }}{% endblock title %}
 
@@ -9,5 +10,6 @@
         <p>登録者:{{ object.person}}</p>
         <p>状況:{{ object.get_status_display }}</p>
         <p>登録日:{{ object.created_at }}</p>
+        <p>図面：<img class="prev" src="{% static 'images/prev.png' %}"></p>
     </div>
 {% endblock content %}
