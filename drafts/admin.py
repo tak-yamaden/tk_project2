@@ -1,7 +1,10 @@
 from django.contrib import admin
 from .models import Draft, Person, Category
 
+
+
 class DraftAdmin(admin.ModelAdmin):
+
     list_display = ('product_name', 'company_name', 'status', 'person', 'is_active')
 
 

@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.urls import reverse
 
@@ -51,3 +52,4 @@ class Draft(models.Model):
 
     def get_absolute_url(self):
         return reverse('draft_detail', args=[str(self.id)])
+

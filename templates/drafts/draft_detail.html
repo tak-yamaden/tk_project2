@@ -4,13 +4,16 @@
 {% block title %}{{ object.product_name }}{% endblock title %}
 
 {% block content %}
-    <div class="draft-detail">
-        <h2><a href="">{{ object.product_name }}</a></h2>
-        <p>会社名:{{ object.company_name }}</p>
-        <p>登録者:{{ object.person}}</p>
-        <p>状況:{{ object.get_status_display }}</p>
-        <p>登録日:{{ object.created_at }}</p>
-        <p>図面:{{ object.cover }}></p>
+	<div class="draft-detail">
+		{% if draft.cover %}
+			<img class="draftcover" src="{{ draft.cover.url }}" alt="{{ draft.product_name }}">
+		{% endif %}
+		<h2><a href="">{{ object.product_name }}</a></h2>
+		<p>会社名:{{ object.company_name }}</p>
+		<p>登録者:{{ object.person }}</p>
+		<p>状況:{{ object.get_status_display }}</p>
+		<p>登録日:{{ object.created_at }}</p>
+        <p>図面: {{ object.cover }}</p>
 
-    </div>
+	</div>
 {% endblock content %}
