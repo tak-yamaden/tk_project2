@@ -47,6 +47,11 @@ class Draft(models.Model):
     cover = models.ImageField('図面', upload_to='covers/', blank=True)
     is_active = models.BooleanField(default=False)
 
+    class Meta:
+        permissions = [
+            ('special_status', 'Can read all books'),
+        ]
+
     def __str__(self):
         return self.product_name
 
