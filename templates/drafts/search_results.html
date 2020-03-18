@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %}Search Results{% endblock title %}
+
+{% block content %}
+    <h1>Search Results</h1>
+
+    {% for draft in draft_list %}
+        <div>
+        <h3><a href="{{ draft.get_absolute_url }}">{{ draft.product_name }}</a></h3>
+        <p>会社名: {{ draft.company_name }}</p>
+        <p>状況: {{ draft.get_status_display }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
