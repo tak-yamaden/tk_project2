@@ -1,11 +1,11 @@
 {% extends '_base.html' %}
 
-{% block title %}Drafts{% endblock title %}
+{% block title %} | Drafts{% endblock title %}
 
 {% block content %}
 	{% for draft in draft_list %}
 		<div>
-			<h2><a href="{{ draft.get_absolute_url }}">{{ draft.product_name }}</a></h2>
+			<h2><a href="{{ draft.get_absolute_url }}">{{ draft.company_name }}</a></h2>
 		</div>
 	{% endfor %}
 {% endblock content %}

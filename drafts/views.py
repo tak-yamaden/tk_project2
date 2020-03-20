@@ -28,3 +28,4 @@ class SearchResultListView(LoginRequiredMixin, ListView):
         return Draft.objects.filter(
             Q(product_name__icontains=query) | Q(company_name__icontains=query)
         )
+
