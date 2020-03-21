@@ -3,7 +3,7 @@ from drafts.models import Category
 
 register = template.Library()
 
-@register.inclusion_tag('drafts/includes/category_links.html')
+@register.inclusion_tag('drafts/tags/category_links.html')
 def render_category_links():
     return {
         'category_list': Category.objects.all(),

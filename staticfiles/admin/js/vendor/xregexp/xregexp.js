@@ -60,9 +60,9 @@ XRegExp = XRegExp || (function (undef) {
 
 // Regexes that match native regex syntax
         nativeTokens = {
-            // Any native multicharacter token in default scope (includes octals, excludes character classes)
+            // Any native multicharacter token in default scope (tags octals, excludes character classes)
             "default": /^(?:\\(?:0(?:[0-3][0-7]{0,2}|[4-7][0-7]?)?|[1-9]\d*|x[\dA-Fa-f]{2}|u[\dA-Fa-f]{4}|c[A-Za-z]|[\s\S])|\(\?[:=!]|[?*+]\?|{\d+(?:,\d*)?}\??)/,
-            // Any native multicharacter token in character class scope (includes octals)
+            // Any native multicharacter token in character class scope (tags octals)
             "class": /^(?:\\(?:[0-3][0-7]{0,2}|[4-7][0-7]?|x[\dA-Fa-f]{2}|u[\dA-Fa-f]{4}|c[A-Za-z]|[\s\S]))/
         },
 

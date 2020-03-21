@@ -1,0 +1,7 @@
+<ul>
+	{% for category in category_list %}
+		<li ><a href="">{{ category.company }}</a></li>
+	{% empty %}
+		<p>登録がありません</p>
+    {% endfor %}
+</ul>

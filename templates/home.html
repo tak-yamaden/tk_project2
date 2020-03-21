@@ -1,6 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
-
+{% load  category_tags%}
 
 {% block title %} | Home {% endblock title %}
 
@@ -23,13 +23,7 @@
 			<div class="col-md-4">
 				<ul class="list-group">
 					<li class="list-group-item mt-2 bg-dark text-white">会社名</li>
-					{% for category in category_list %}
-						<li class="list-group-item ">
-							<a href="">{{ category }}</a>
-						</li>
-					{% empty %}
-						<p>登録がありません</p>
-					{% endfor %}
+					{% render_category_links %}
 				</ul>
 			</div>
 		</div>

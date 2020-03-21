@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'bootstrap4',
 
+
     'crispy_forms',
     'allauth',
     'allauth.account',
