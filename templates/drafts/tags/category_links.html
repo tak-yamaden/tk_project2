@@ -1,6 +1,8 @@
+{% load static %}
+
 <ul>
-	{% for category in category_list %}
-		<li ><a href="">{{ category.company }}</a></li>
+	{% for draft in draft_list %}
+		<li class="tags"><h5><a href="">{{ draft.category }} ({{ draft.count }})</a></h5></li>
 	{% empty %}
 		<p>登録がありません</p>
     {% endfor %}
