@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    
 
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
@@ -89,13 +90,12 @@ WSGI_APPLICATION = 'draft_control.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tk_projectdb',
+        'NAME': 'tk_project3',
         'USER': 'postgres',
-        'PASSWORD': '22aj63bg?',
+        'password' : '22aj63bg??!',
         'HOST': 'localhost',
-    }
+     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

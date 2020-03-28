@@ -1,9 +1,18 @@
 {% load static %}
 
 <ul>
-	{% for draft in draft_list %}
-		<li class="tags"><h5><a href="">{{ draft.category }} ({{ draft.count }})</a></h5></li>
+	{% for category in category_list %}
+{#	{% for category in category_list %}#}
+		<li class="tags"><h5><a href="">{{ category.company }} ({{ category.count }})</a></h5></li>
+
 	{% empty %}
 		<p>登録がありません</p>
-    {% endfor %}
+	{% endfor %}
+	{#	{% for category in category_list %}#}
+	{#	{% for category in category_list %}#}
+	{#		<li class="tags"><h5><a href="">{{ category.company }} ({{ category }})</a></h5></li>#}
+	{##}
+	{#	{% empty %}#}
+	{#		<p>登録がありません</p>#}
+	{#	{% endfor %}#}
 </ul>

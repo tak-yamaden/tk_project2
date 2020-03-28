@@ -1,6 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
-{% load  category_tags%}
+{% load  category_tags %}
 
 {% block title %} | Home {% endblock title %}
 
@@ -21,10 +21,33 @@
 				{% endif %}
 			</div>
 			<div class="col-md-4">
-				<ul class="list-group">
-					<li class="list-group-item mt-2 mb-2 bg-dark text-white">会社名</li>
-					{% render_category_links %}
-				</ul>
+				{#				<ul class="list-group">#}
+				{#					<li class="list-group-item mt-2 mb-2 bg-dark text-white">会社名</li>#}
+				{#					{% render_category_links %}#}
+				{#					{% for category in category_list %}#}
+				{#						{{ category.company }}#}
+				{#					{% empty %}#}
+				{#						<p>登録がありません</p>#}
+				{#					{% endfor %}#}
+				{#				</ul>#}
+				<table class="table">
+					<thead>
+					<tr>
+						<th>会社名</th>
+						<th>登録件数</th>
+					</tr>
+					</thead>
+					<tbody>
+					{% for category in category_list %}
+						<tr>
+							<td>
+								{{ category.company }}
+							</td>
+							<td>{{ category.get_draft_count }}</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

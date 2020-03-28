@@ -5,7 +5,7 @@
 {% block content %}
 	<h2>Search</h2>
 	<form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
-		<input name="q" class="form-control mr-sm-2" type="text" placeholder="y_number" aria-label="Search">
+		<input name="q" class="form-control mr-sm-2" type="text" placeholder="Y number or 会社名 or 住所" aria-label="Search">
 		<button class="btn btn-info" type="submit">Search</button>
 	</form>
 {% endblock content %}
