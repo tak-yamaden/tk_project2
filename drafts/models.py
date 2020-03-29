@@ -16,7 +16,7 @@ class Category(models.Model):
         return self.company
 
     def get_draft_count(self):
-        return Draft.objects.filter(category__company=self).count()
+        return Draft.objects.filter(category__company=self).filter(is_active=True).count()
 
 
 class Status(models.Model):

@@ -3,9 +3,25 @@
 {% block title %}| Search{% endblock title %}
 
 {% block content %}
-	<h2>Search</h2>
-	<form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
-		<input name="q" class="form-control mr-sm-2" type="text" placeholder="Y number or 会社名 or 住所" aria-label="Search">
-		<button class="btn btn-info" type="submit">Search</button>
-	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Search For Product </h2>
+				<p>製品名、会社名、会社住所で検索出来ます</p>
+				<form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+					<input name="q" class="form-control mr-sm-2" type="text" placeholder="search" aria-label="Search">
+					<button class="btn btn-info" type="submit">Search</button>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<h2>Search For Obsolete Drawing</h2>
+				<p>廃止図面を検索できます</p>
+				<form class="form-inline mt-2 mt-md-0" action="" method="get">
+					<input name="q" class="form-control mr-sm-2" type="text" placeholder="search" aria-label="Search">
+					<button class="btn btn-info" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
 {% endblock content %}

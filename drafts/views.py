@@ -26,8 +26,7 @@ class SearchResultListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         return Draft.objects.filter(
-            Q(product_name__icontains=query) | Q(company_name__icontains=query) | Q(category__address=query)
-        )
+            Q(product_name__icontains=query) | Q(company_name__icontains=query) | Q(category__address=query))
 
 
 
