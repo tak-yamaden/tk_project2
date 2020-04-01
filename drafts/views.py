@@ -9,6 +9,8 @@ class DraftListView(LoginRequiredMixin, ListView):
     context_object_name = 'draft_list'
     template_name = 'drafts/draft_list.html'
     login_url = 'account_login'
+    paginate_by = 2
+
 
 class DraftDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     model = Draft
