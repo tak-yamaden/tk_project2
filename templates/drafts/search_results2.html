@@ -1,10 +1,10 @@
 {% extends '_base.html' %}
 
-{% block title %} | Search For Products {% endblock title %}
+{% block title %} | Search For Obsolete Drawing {% endblock title %}
 
 {% block content %}
 	<div class="main-container">
-		<h1>Search Results For Products</h1>
+		<h1>Search Results For Obsolete Drawing</h1>
 		{% for draft in draft_list %}
 			<div class="">
 				<h4><a href="{{ draft.get_absolute_url }}">{{ draft.product_name }}</a></h4>

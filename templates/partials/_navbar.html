@@ -25,7 +25,8 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<a class="btn btn-outline-info p-2 mr-2 text-white" href="{% url 'draft_list' %}">Draft</a>
+{#			<a class="btn btn-outline-info p-2 mr-2 text-white" href="{% url 'draft_list' %}">Draft</a>#}
+			<a class="btn btn-outline-info p2 mr-2 text-white" href="{% url 'category_list' %}">Category</a>
 			<a class="btn btn-outline-info p-2 mr-2 text-white" href="{% url 'search' %}">Search</a>
 			<a class="btn btn-outline-info p-2 mr-2 text-white" href="{% url 'about' %}">About</a>
 			{% if user.is_authenticated %}

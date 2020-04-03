@@ -1,16 +1,28 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %} | Drafts{% endblock title %}
+{% block title %} | Category {% endblock title %}
 
 {% block content %}
-	{% for draft in draft_list %}
-		<div>
-			<h2><a href="{{ draft.get_absolute_url }}">{{ draft.product_name }}</a></h2>
-		</div>
-	{% endfor %}
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Company</th>
+			<th>Number of Registrations</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for category in category_list %}
+			<tr>
+				<td>
+					{{ category.company }}
+				</td>
+				<td>{{ category.get_draft_count }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
 
-{#{% include 'page.html' %}#}
 
 	<div id="set_paginator" class="row">
 		<div class="col-md-12">
@@ -57,5 +69,6 @@
 			{% endif %}
 		</div>
 	</div>
+	{#	{% include 'page.html' %}#}
 {% endblock content %}
 
