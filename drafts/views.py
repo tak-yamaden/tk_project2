@@ -4,12 +4,14 @@ from django.views.generic import ListView, DetailView
 
 from .models import Draft, Category, Person
 
+
 class DraftListView(LoginRequiredMixin, ListView):
     model = Draft
     context_object_name = 'draft_list'
     template_name = 'drafts/draft_list.html'
     login_url = 'account_login'
     paginate_by = 5
+
 
 class CategoryListView(LoginRequiredMixin, ListView):
     model = Category
@@ -26,6 +28,7 @@ class DraftDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     login_url = 'account_login'
     permission_required = 'drafts.special_status'
 
+
 class SearchResultListView(LoginRequiredMixin, ListView):
     model = Draft
     context_object_name = 'draft_list'
@@ -35,6 +38,7 @@ class SearchResultListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
+        print(query)
         return Draft.objects.filter(
             Q(product_name__icontains=query) | Q(company_name__icontains=query) | Q(category__address=query))\
             .filter(is_active=True)
